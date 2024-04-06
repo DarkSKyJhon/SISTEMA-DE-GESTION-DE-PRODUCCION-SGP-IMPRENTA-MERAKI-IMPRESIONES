@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Y Registro - MerakiImpresiones</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="assets/css/estilos.css">
+    
+    </head>
+    <body>
+        <main>
+            <div class="contenedor__todo">
+                <div class="caja__trasera">
+                    <div class="caja__trasera-login">
+                        <h3>¿Ya tienes una cuenta?</h3>
+                        <p>Inicia sesion para entrar al Sistema</p>
+                        <button id="btn__iniciar-sesion"> Iniciar Sesion</button>
+                    </div>
+                    <div class="caja__trasera-register">
+                        <h3>¿Aun no tienes una cuenta?</h3>
+                        <p>Registrate para iniciar sesion para entrar al Sistema</p>
+                        <button id="btn__registrarse"> Registrarse</button>
+                    </div>
+                
+                </div>
+                <!--FORMULARIO LOGIN REGISTRO-->
+                <div class="contenedor__login-register">
+                    <form action="assets/php/conexion_bd.php" class="formulario__login" method = "post">
+                        <h2>Iniciar Sesion</h2>
+                        <input type="text" id = "usuario" name = "usuario" placeholder="Usuario" required>
+                        <input type="password" id = "password" name = "password" placeholder="Contraseña" required>
+                        <button type = "submit" class = "btn btn-primary">Entrar</button>
+                    </form>
+                    <form action="" class="formulario__register" method = "post">
+                        <h2>Registrarse</h2>
+                        <input type="text" placeholder="Nombre">
+                        <input type="text" placeholder="Apellido">
+                        <input type="text" placeholder="Telefono">
+                        <input type="email" placeholder="Correo Electronico">
+                        <input type="text" placeholder="Usuario">
+                        <input type="password" placeholder="Contraseña">
+                        <button>Registrarse</button>
+                    </form>
+
+                </div>
+                
+            </div>
+        </main>
+
+        <script src="assets/js/script.js"></script>
+    </body>
+</html>
