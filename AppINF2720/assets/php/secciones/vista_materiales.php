@@ -12,7 +12,7 @@
         <div class = "col-md-5">
             <form action="" method="post">
 
-            <div class="card">
+            <div class="text-center text-secondary alert alert-success">
                 <div class="card-header">Gestion de Materiales</div>
                 <div class="card-body">
                     <div class="mb-3">
