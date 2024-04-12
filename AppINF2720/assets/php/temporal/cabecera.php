@@ -16,6 +16,7 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
+        <script src="https://kit.fontawesome.com/c971a05466.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <header>
