@@ -13,7 +13,7 @@
             <form action="" method="post">
 
             <div class="card">
-                <div class="text-center text-secondary alert alert-success">Gestion de Materiales</div>
+                <h3 class="text-center text-secondary alert alert-success">Gestion de Materiales</h3>
                 <div class="card-body">
                     <div class="mb-3">
                         <label for="" class="form-label">ID</label>
