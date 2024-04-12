@@ -1,6 +1,8 @@
 <?php
 
-include_once '../configuraciones/bd.php';
-$conexionBD = BaseDatos::crearInstancia();
+  $conexion = new mysqli("localhost", "root", "", "aplicacion_web");
+  $conexion->set_charset("utf8");
+  
+
 
 ?>

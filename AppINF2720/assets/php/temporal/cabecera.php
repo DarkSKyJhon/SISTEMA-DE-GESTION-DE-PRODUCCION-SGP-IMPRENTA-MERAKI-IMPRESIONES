@@ -16,6 +16,8 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
+        
+        <script src="https://kit.fontawesome.com/c971a05466.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -23,12 +25,12 @@
             <!-- place navbar here -->
             <nav class="navbar navbar-expand navbar-light bg-light">
                 <div class="nav navbar-nav">
-                    <a class="nav-item nav-link active" href="index.php" >Inicio </a>
-                    <a class="nav-item nav-link" href="vista_trabajos.php">Trabajos</a>
-                    <a class="nav-item nav-link" href="vista_materiales.php">Materiales</a>
-                    <a class="nav-item nav-link" href="vista_transacciones.php">Transacciones</a>
-                    <a class="nav-item nav-link" href="vista_clientes.php">Clientes</a>
-                    <a class="nav-item nav-link" href="#">Cerrar Sesion</a>
+                    <a class="nav-item nav-link active" href="index.php" ><i class="fa-solid fa-house"></i></a>
+                    <a class="nav-item nav-link" href="vista_trabajos.php"><i class="fa-solid fa-business-time"></i>Trabajos</a>
+                    <a class="nav-item nav-link" href="vista_materiales.php"><i class="fa-solid fa-layer-group"></i>Materiales</a>
+                    <a class="nav-item nav-link" href="vista_transacciones.php"><i class="fa-solid fa-money-check-dollar"></i>Transacciones</a>
+                    <a class="nav-item nav-link" href="vista_clientes.php"><i class="fa-solid fa-user"></i>Clientes</a>
+                    <a class="nav-item nav-link" href="#"><i class="fa-solid fa-door-open"></i>Cerrar Sesion</a>
                     
                     
                 </div>
