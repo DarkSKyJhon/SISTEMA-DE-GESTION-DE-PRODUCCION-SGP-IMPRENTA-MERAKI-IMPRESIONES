@@ -70,12 +70,12 @@
           <li class="nav-item"><a class="nav-link" href="#">
             <svg class="bi" width="24" height="24"><use xlink:href="#aperture"/></svg>
           </a></li>
-          <li class="nav-item"><a class="nav-link" href="index.php" ><i class="fa-solid fa-house"></i>Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="vista_trabajos.php"><i class="fa-solid fa-business-time"></i>Trabajos</a></li>
-          <li class="nav-item"><a class="nav-link" href="vista_materiales.php" ><i class="fa-solid fa-layer-group"></i>Materiales</a></li>
-          <li class="nav-item"><a class="nav-link" href="vista_transacciones.php"><i class="fa-solid fa-money-check-dollar"></i>Transacciones</a></li>
-          <li class="nav-item"><a class="nav-link" href="vista_clientes.php"><i class="fa-solid fa-user"></i>Clientes</a></li>
-          <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-door-open"></i>Cerrar Sesion</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.php" ><i class="fa-solid fa-house"></i> Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="vista_trabajos.php"><i class="fa-solid fa-business-time"></i> Trabajos</a></li>
+          <li class="nav-item"><a class="nav-link" href="vista_materiales.php" ><i class="fa-solid fa-layer-group"></i> Materiales</a></li>
+          <li class="nav-item"><a class="nav-link" href="vista_transacciones.php"><i class="fa-solid fa-money-check-dollar"></i> Transacciones</a></li>
+          <li class="nav-item"><a class="nav-link" href="vista_clientes.php"><i class="fa-solid fa-user"></i> Clientes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-door-open"></i> Cerrar Sesion</a></li>
           <li class="nav-item"><a class="nav-link" href="#">
           </a></li>
         </ul>
