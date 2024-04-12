@@ -13,8 +13,21 @@
             <form action="" method="post">
 
             <div class="card">
-                <div class="card-header">Gestion de Materiales</div>
+                <div class="text-center text-secondary alert alert-success">Gestion de Materiales</div>
                 <div class="card-body">
+                    <div class="mb-3">
+                        <label for="" class="form-label">ID</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="id"
+                            id="id"
+                            value = "<?php echo $IdMaterial;?>"
+                            aria-describedby="helpId"
+                            placeholder="Codigo del material"
+                            required
+                        >
+                    </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Material</label>
                         <input
@@ -22,6 +35,7 @@
                             class="form-control"
                             name="material"
                             id="material"
+                            value = "<?php echo $Nombre;?>"
                             placeholder="Nombre del Material"
                             required
                         >
@@ -34,6 +48,7 @@
                             class="form-control"
                             name="precio"
                             id="precio"
+                            value = "<?php echo $PrecioCompra;?>"
                             aria-describedby="helpId"
                             placeholder="Precio en Bs"
                             pattern="[0-9]+(\.[0-9]+)?"
@@ -50,6 +65,7 @@
                             class="form-control"
                             name="cantidad"
                             id="cantidad"
+                            value = "<?php echo $Stock;?>"
                             aria-describedby="helpId"
                             placeholder="Cantidad del Material en Inventario"
                             min="0" 
@@ -63,8 +79,9 @@
                         <label for="material" class="form-label">Descripcion</label>
                         <textarea
                             class="form-control"
-                            name="material"
-                            id="material"
+                            name="descripcion"
+                            id="descripcion"
+                            value = "<?php echo $Descripcion;?>"
                             rows="5" 
                             maxlength="255" 
                             placeholder="Descripción del Material"
@@ -116,20 +133,30 @@
                 <table class="table table-primary">
                     <thead>
                         <tr>
-                            <th scope="col">#</th> 
+                            <th scope="col">ID</th> 
                             <th scope="col">Material</th>
-                            <th scope="col">Precio Unitario [Bs]</th>
+                            <th scope="col">Precio Unitario[Bs]</th>
                             <th scope="col">Cantidad</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">#####</th>
                         </tr>
                     </thead>
                     <tbody>
+                    <?php foreach($listaMateriales as $Material){ ?>  
                         <tr>
-                            <th scope="row">1</th> 
-                            <td>Nombre del Material</td>
-                            <td>......</td>
-                            <td>......</td>
+                            <td> <?php echo $Material['IdMaterial']; ?></td>
+                            <td> <?php echo $Material['Nombre']; ?></td>
+                            <td> <?php echo $Material['PrecioCompra']; ?> </td>
+                            <td> <?php echo $Material['Stock']; ?> </td>
+                            <td> <?php echo $Material['Descripcion']; ?> </td>
+                            <td>
+                                <form action = "" method = "post">
+                                    <input type = "hidden" name = "id" id = "id" value = "<?php echo $Material['IdMaterial'];?>"/>
+                                    <input type = "submit" value = "Seleccionar" name = "accion" class = "btn btn-info">
+                                </form>
+                            </td>
                         </tr>
-    
+                    <?php } ?>
                     </tbody>
                 </table>
             </div>
