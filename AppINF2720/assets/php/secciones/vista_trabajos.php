@@ -22,8 +22,11 @@ $trabajos = obtenerListaTrabajos($conexionBD);
             <div class="card">
                 <h3 class="text-center text-secondary alert alert-success"">Gestion de Trabajos</h3>
                 <div class="card-body">
+                    <input type="hidden" name="id_trabajo_seleccionado" id="id_trabajo_seleccionado" value="">
+
                     <div class="mb-3">
                         <label for="" class="form-label">Trabajo</label>
+
                         <input
                             type="text"
                             class="form-control"
@@ -53,8 +56,6 @@ $trabajos = obtenerListaTrabajos($conexionBD);
                         <label for="tipo_trabajo" class="form-label">Tipo de Trabajo</label>
                         <select class="form-select" name="tipo_trabajo" id="tipo_trabajo" >
                             <option value="" disabled selected>Seleccionar</option>
-                            <!-- Aquí recuperas las opciones desde la base de datos y las iteras para mostrarlas -->
-                            <!-- Por ejemplo, si las opciones están en un array llamado $opciones en PHP: -->
                             <?php foreach ($lista as $elemento) { ?>
                                 <option value="<?php echo $elemento['NombreCategoria']; ?>"><?php echo $elemento['NombreCategoria']; ?></option>
                             <?php } ?>
@@ -105,6 +106,7 @@ $trabajos = obtenerListaTrabajos($conexionBD);
                             name="accion"
                             value="editar"
                             class="btn btn-primary btn-block"
+                            onclick="return confirm('¿Estás seguro de que deseas editar este trabajo?')"
                         >
                             Editar
                         </button>
@@ -112,6 +114,7 @@ $trabajos = obtenerListaTrabajos($conexionBD);
                             type="submit"
                             name="accion"
                             value="eliminar"
+                            onclick="return confirm('¿Estás seguro de que deseas eliminar este trabajo?')"
                             class="btn btn-danger btn-block" 
                         >
                             Eliminar
@@ -131,7 +134,7 @@ $trabajos = obtenerListaTrabajos($conexionBD);
 
         <div class = "col-md-7">
             <div class="table">
-                <table class="table table-primary">
+                <table class="table table-striped table table-">
                     <thead>
                         <tr>
                             <th scope="col">#</th> 
@@ -147,14 +150,18 @@ $trabajos = obtenerListaTrabajos($conexionBD);
                     <tbody>
                         <?php $contador = 1 ?>
                         <?php foreach ($trabajos as $elemento) { ?>
-                            <tr>
+                            <tr data-idtrabajo="<?php echo $elemento['IdTrabajo']; ?>">
                                 <td> <?php echo $contador ?>  </td>
                                 <td> <?php echo $elemento['NombreTrabajo']; ?>  </td>
                                 <td> <?php echo $elemento['NumeroTrabajo']; ?>  </td>
                                 <td> <?php echo $elemento['NombreCategoria']; ?>  </td>
                                 <td> <?php echo $elemento['SubTotal']; ?>  </td>
                                 <td> <?php echo $elemento['Cantidad']; ?>  </td>
-                                <td><a href="vista_observaciones.php" class="btn btn-primary"> <i class="fa-solid fa-plus"></i> </a></td>
+                                <td>
+                                    <a href="vista_observaciones.php?NumeroTrabajo=<?php echo $elemento['NumeroTrabajo']; ?>&IdTrabajo=<?php echo $elemento['IdTrabajo']; ?>" class="btn btn-primary">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </a>
+                                </td>
                             </tr>
                             <?php $contador += 1 ?> 
                         <?php } ?>                          
@@ -176,6 +183,9 @@ $trabajos = obtenerListaTrabajos($conexionBD);
                             // Agregar la clase "seleccionada" a la fila actual
                             fila.classList.add("seleccionada");
 
+                            // Obtener el valor de IdTrabajo de la fila seleccionada
+                            const idTrabajo = fila.getAttribute("data-idtrabajo");
+
                             const celdas = fila.querySelectorAll("td");
 
                             // Obtener datos de las celdas
@@ -189,6 +199,7 @@ $trabajos = obtenerListaTrabajos($conexionBD);
                             document.getElementById("codigo_trabajo").value = codigoTrabajo;
                             document.getElementById("precio_trabajo").value = precioTrabajo;
                             document.getElementById("cantidad_trabajo").value = cantidadTrabajo;
+                            document.getElementById("id_trabajo_seleccionado").value = idTrabajo;
 
                             var tipoTrabajoSelect = document.getElementById("tipo_trabajo");
 
@@ -200,8 +211,6 @@ $trabajos = obtenerListaTrabajos($conexionBD);
                                 }
                             }
 
-                            // Mostrar un mensaje de confirmación al usuario
-                            alert("Trabajo seleccionado: " + nombreTrabajo);
                         });
                     });
                 });
