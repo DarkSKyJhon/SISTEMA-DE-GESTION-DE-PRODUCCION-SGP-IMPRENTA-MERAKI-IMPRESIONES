@@ -79,14 +79,14 @@
                     <div class="mb-3">
                         <label for="material" class="form-label">Descripcion</label>
                         <textarea
+                            type = "text"
                             class="form-control"
                             name="descripcion"
                             id="descripcion"
-                            value = "<?php echo $Descripcion;?>"
                             rows="5" 
-                            maxlength="255" 
+                            maxlength= 300 
                             placeholder="Descripción del Material"
-                        ></textarea>
+                        ><?php echo $Descripcion;?></textarea>
                         <div class="form-text">Ingrese una descripción del material (máximo 255 caracteres).</div>
                     </div>
 
@@ -131,7 +131,7 @@
 
         <div class = "col-md-7">
             <div class="table-responsive">
-                <table class="table table-primary">
+                <table class="table table-striped table table-">
                     <thead>
                         <tr>
                             <th scope="col">ID</th> 
