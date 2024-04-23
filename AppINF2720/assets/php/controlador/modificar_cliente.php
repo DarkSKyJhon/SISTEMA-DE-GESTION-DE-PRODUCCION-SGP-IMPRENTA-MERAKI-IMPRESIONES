@@ -1,6 +1,6 @@
 <?php 
 include "../datos/clientes.php";
-
+include('../temporal/cabecera.php');
 
 if(isset($_GET["id"])) {
     $id = $_GET["id"];
@@ -9,7 +9,7 @@ if(isset($_GET["id"])) {
     $sql = $conexion->query("SELECT * FROM clientes WHERE IdCliente = $id");
 
     
-    include('../temporal/cabecera.php');
+    
 ?>
     <form class="col-4 p-3 m-auto border rounded" method="POST">
         <h3 class="text-center text-secondary alert alert-success">Modificar Cliente</h3>
