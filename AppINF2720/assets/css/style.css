@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background-color: #080202;
+  font-family: "Poppins", sans-serif;
+}
+
+img{
+    max-width: 100%;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-content{
+    display: flex;
+    align-items: center;
+    padding: 200px 0 150px 0;
+}
+  
+.header-txt{
+    width: 40%;
+    padding-right: 25px;
+}
+  
+.header-txt h1{
+    font-size: 55px;
+    line-height: 70px;
+    font-weight: 800;
+    color: #FDFDFD;
+    margin-bottom: 25px;
+}
+
+  
+.header-txt p{
+    font-size: 18px;
+    color: #a0a0a0;
+}
+  
+.header-img {
+    width: 60%;
+}
+  
+.hamburger{
+    width: 100%;
+}
+
+.botones{
+    display: flex;
+    margin-top: 50px;
+}
+
+.icon-link{
+    display: flex;
+}
+
+.btn-3{
+    display: inline-block;
+    padding: 11px 35px;
+    border: 2px solid #FF5A2C;
+    border-radius: 25px;
+    margin-right: 25px;
+    font-size: 17px;
+    color: white;
+
+}
+
+.btn-3{
+    background-color: #FF5A2C;
+}
+
+.popular{
+    padding: 100px 0;
+    text-align: center;
+}
+
+h2{
+    color:white;
+    font-size: 35px;
+    margin-bottom: 45px;
+}
+
+.popular-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.popular-content img{
+    width: 150px;
+}
+
+.product-content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+.product-1{
+    background-color: #2A223A;
+}
+
+.product-txt{
+    padding: 50px 30px;
+}
+
+h3{
+    font-size: 40px;
+    color:white;
+}
+
+.price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price p{
+    font-size: 17px;
+    color:#FF5A2C;
+}
+
+.contact{
+    padding: 150px 300px;
+}
+
+.contact-content{
+    background-color: #2A223A;
+    text-align: center;
+    padding: 50px;
+    border-radius: 50px;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+input{
+    padding: 18px 25px;
+    background-color: #3F3456;
+    border: 0;
+    border-radius: 25px;
+    outline: none;
+    margin-right: 10px;
+    color: white;
+    font-size: 17px;
+}
+
+::placeholder{
+    color: E0E0E0;
+    font-size: 17px;
+}
+
+.btn-3{
+    background-color: #FF5A2C;
+    cursor: pointer;
+    margin-right: 0;
+}
+
+.map{
+    filter: grayscale(100%) invert(92%) contrast(93%);
+}
+
+{}

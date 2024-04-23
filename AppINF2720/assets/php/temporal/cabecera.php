@@ -17,8 +17,6 @@
             crossorigin="anonymous"
         />
         <script src="https://kit.fontawesome.com/c971a05466.js" crossorigin="anonymous"></script>
-    </head>
-        <script src="https://kit.fontawesome.com/c971a05466.js" crossorigin="anonymous"></script>
       </head>
     <body>
         <header>
