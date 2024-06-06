@@ -2,89 +2,81 @@
 include "../datos/usuarios.php";
 include('../temporal/cabecera.php');
 
-
-if(isset($_GET["id"])) {
+if (isset($_GET["id"])) {
     $id = $_GET["id"];
-
-    
     $sql = $conexion->query("SELECT * FROM usuario WHERE IdUsuario = $id");
-
+    
+    if ($sql->num_rows > 0) {
+        $datos = $sql->fetch_object();
 ?>
-    <form class="col-4 p-3 m-auto border rounded" method="POST">
-        <h3 class="text-center text-secondary alert alert-success">Modificar Usuario</h3>
-        <input type="hidden" name="id" value="<?= $_GET["id"] ?>">
-        <?php
-       
-        if(isset($_POST["btnregistrar"])) {
-            if(!empty($_POST["nombre"]) and !empty($_POST["apellido"]) and !empty($_POST["correo"]) and !empty($_POST["telefono"]) and !empty($_POST["estado"]) and !empty($_POST["fecha"]) and !empty($_POST["usuario"]) and !empty($_POST["contrasenia"])){
-               $id=$_POST["id"];
-               $nombre=$_POST['nombre'];
-               $apellido=$_POST['apellido'];
-               $correo=$_POST['correo'];
-               $telefono=$_POST['telefono'];
-               $estado=$_POST['estado'];
-               $fecha=$_POST['fecha'];
-               $usuario=$_POST['usuario'];
-               $contrasenia=$_POST['contrasenia'];
-               $sql=$conexion->query(" update usuario set Nombre='$nombre',Apellido='$apellido',Correo='$correo',Telefono=$telefono,Estado=$estado,FechaRegistro='$fecha',Usuario='$usuario',Contrasenia='$contrasenia' where IdUsuario=$id");
-               if ($sql==1){
-                header("location:../secciones/vista_usuarios.php");
+        <form class="col-4 p-3 m-auto border rounded" method="POST">
+            <h3 class="text-center text-secondary alert alert-success">Modificar Usuario</h3>
+            <input type="hidden" name="id" value="<?= $id ?>">
+            <?php
+            if (isset($_POST["btnregistrar"])) {
+                $nombre = $_POST['nombre'];
+                $apellido = $_POST['apellido'];
+                $correo = $_POST['correo'];
+                $telefono = $_POST['telefono'];
+                $estado = $_POST['estado'];
+                $usuario = $_POST['usuario'];
+                $contrasenia = $_POST['contrasenia'];
 
-               }else{
-                echo "<div class='alert alert-danger'>Error al modificar Usuario</div>";
+                // Preparar la consulta para actualizar el usuario
+                $stmt = $conexion->prepare("UPDATE usuario SET Nombre=?, Apellido=?, Correo=?, Telefono=?, Estado=?, Usuario=?, Contrasenia=? WHERE IdUsuario=?");
+                $stmt->bind_param("ssssissi", $nombre, $apellido, $correo, $telefono, $estado, $usuario, $contrasenia, $id);
 
-               }
-
-            }else{
-             echo "<div class='alert alert-warning'>campos vacios</div>";
+                if ($stmt->execute()) {
+                    header("location:../secciones/vista_usuarios.php");
+                } else {
+                    echo "<div class='alert alert-danger'>Error al modificar Usuario</div>";
+                }
+                $stmt->close();
             }
-
-            
-        }
-
-        
-        while($datos = $sql->fetch_object()) {
-        ?>
-        <div class="mb-3">
-            <label class="form-label">Nombre del Usuario</label>
-            <input type="text" class="form-control" name="nombre" value="<?= $datos->Nombre ?>">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Apellido del Usuario</label>
-            <input type="text" class="form-control" name="apellido" value="<?= $datos->Apellido ?>">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Correo del Usuario</label>
-            <input type="email" class="form-control" name="correo" value="<?= $datos->Correo ?>">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Teléfono del  Usuario</label>
-            <input type="text" class="form-control" name="telefono" value="<?= $datos->Telefono ?>">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Estado del Usuario</label>
-            <input type="text" class="form-control" name="estado" value="<?= $datos->Estado ?>">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">FechaRegistro del Usuario</label>
-            <input type="text" class="form-control" name="fecha" value="<?= $datos->FechaRegistro ?>">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Usuario</label>
-            <input type="text" class="form-control" name="usuario" value="<?= $datos->Usuario ?>">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Contraseña</label>
-            <input type="text" class="form-control" name="contrasenia" value="<?= $datos->Contrasenia ?>">
-        </div>
-        <?php } ?>
-        <div class="mb-3 text-center">
-        <button type="submit" class="btn btn-primary" style="width: 100%;" name="btnregistrar" value="ok">Modificar</button>
-        </div>
-    </form>
-
+            ?>
+            <div class="mb-3">
+                <label class="form-label">Nombre del Usuario</label>
+                <input type="text" class="form-control" name="nombre" value="<?= $datos->Nombre ?>" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Apellido del Usuario</label>
+                <input type="text" class="form-control" name="apellido" value="<?= $datos->Apellido ?>" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Correo del Usuario</label>
+                <input type="email" class="form-control" name="correo" value="<?= $datos->Correo ?>" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Teléfono del Usuario</label>
+                <input type="text" class="form-control" name="telefono" value="<?= $datos->Telefono ?>" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Estado del Usuario</label>
+                <select class="form-control" name="estado" required>
+                    <option value="1" <?= $datos->Estado == '1' ? 'selected' : '' ?>>Activo</option>
+                    <option value="0" <?= $datos->Estado == '0' ? 'selected' : '' ?>>Inactivo</option>
+                </select>
+            </div>
+            <input type="hidden" name="fecha" value="<?= $datos->FechaRegistro ?>">
+            <div class="mb-3">
+                <label class="form-label">Usuario</label>
+                <input type="text" class="form-control" name="usuario" value="<?= $datos->Usuario ?>" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Contraseña</label>
+                <input type="text" class="form-control" name="contrasenia" value="<?= $datos->Contrasenia ?>" required>
+            </div>
+            <div class="mb-3 text-center">
+                <button type="submit" class="btn btn-primary" style="width: 100%;" name="btnregistrar" value="ok">Modificar</button>
+            </div>
+        </form>
 <?php 
-    // Incluir el pie del HTML
-    include('../temporal/pie.php');
+        
+        include('../temporal/pie.php');
+    } else {
+        echo "<div class='alert alert-danger'>Usuario no encontrado.</div>";
+    }
+} else {
+    echo "<div class='alert alert-danger'>ID de usuario no proporcionado.</div>";
 }
 ?>
