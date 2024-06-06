@@ -70,7 +70,7 @@ $fechaActual = date("Y-m-d");
               <th scope="col">Nombre</th>
               <th scope="col">Apellido</th>
               <th scope="col">Correo</th>
-              <th scope="col">Telefono</th>
+              <th scope="col">Teléfono</th>
               <th scope="col">Estado</th>
               <th scope="col">FechaRegistro</th>
               <th scope="col">Usuario</th>
@@ -83,23 +83,23 @@ $fechaActual = date("Y-m-d");
             $sql = $conexion->query("SELECT * FROM usuario");
             while($datos = $sql->fetch_object()) { ?>
               <tr>
-              <td><?= $datos->IdUsuario?></td>
-              <td><?= $datos->Nombre ?></td>
-              <td><?= $datos->Apellido ?></td>
-              <td><?= $datos->Correo ?></td>
-              <td><?= $datos->Telefono ?></td>
-              <td><?= $datos->Estado ?></td>
-              <td><?= $datos->FechaRegistro ?></td>
-              <td><?= $datos->Usuario ?></td>
-              <td><?= $datos->Contrasenia ?></td>
-              
-              <td>
-                <a href="../controlador/modificar_usuario.php?id=<?= $datos->IdUsuario ?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-
-
-                <a onclick="return eliminar()" href="vista_usuarios.php?id=<?= $datos->IdUsuario ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
-              </td>
-
+                <td><?= $datos->IdUsuario ?></td>
+                <td><?= $datos->Nombre ?></td>
+                <td><?= $datos->Apellido ?></td>
+                <td><?= $datos->Correo ?></td>
+                <td><?= $datos->Telefono ?></td>
+                <td><?= $datos->Estado == 1 ? 'Activo' : 'Inactivo' ?></td>
+                <td><?= $datos->FechaRegistro ?></td>
+                <td><?= $datos->Usuario ?></td>
+                <td><?= $datos->Contrasenia ?></td>
+                <td class="d-flex">
+                  <a href="../controlador/modificar_usuario.php?id=<?= $datos->IdUsuario ?>" class="btn btn-small btn-warning me-2">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                  </a>
+                  <a onclick="return eliminar()" href="vista_usuarios.php?id=<?= $datos->IdUsuario ?>" class="btn btn-small btn-danger">
+                    <i class="fa-solid fa-trash"></i>
+                  </a>
+                </td>
               </tr>
             <?php }
             ?>
