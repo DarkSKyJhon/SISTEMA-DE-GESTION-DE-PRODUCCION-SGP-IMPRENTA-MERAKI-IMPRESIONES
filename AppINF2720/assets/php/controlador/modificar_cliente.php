@@ -6,7 +6,7 @@ if(isset($_GET["id"])) {
     $id = $_GET["id"];
 
     
-    $sql = $conexion->query("SELECT * FROM clientes WHERE IdCliente = $id");
+    $sql = $conexion->query("SELECT * FROM cliente WHERE IdCliente = $id");
 
     
     
@@ -24,7 +24,7 @@ if(isset($_GET["id"])) {
                $correo=$_POST["correo"];
                $telefono=$_POST["telefono"];
                $direccion=$_POST["direccion"];
-               $sql=$conexion->query(" update clientes set Nombre='$nombre',Apellido='$apellido',Correo='$correo',Telefono='$telefono',Direccion='$direccion' where IdCliente=$id");
+               $sql=$conexion->query(" update cliente set Nombre='$nombre',Apellido='$apellido',Correo='$correo',Telefono='$telefono',Direccion='$direccion' where IdCliente=$id");
                if ($sql==1){
                 header("location:../secciones/vista_clientes.php");
 

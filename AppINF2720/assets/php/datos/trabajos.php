@@ -35,7 +35,8 @@ function obtenerListaTrabajos($conexionBD) {
     }
 }
 
-function ejecutarAccion($accion, $conexionBD) {
+$accion = isset($_POST['accion']) ? $_POST['accion'] : '';
+if ($accion != '') {
     $idTrabajo = isset($_POST['id_trabajo_seleccionado']) ? $_POST['id_trabajo_seleccionado'] : '';
     $nombre_trabajo = isset($_POST['nombre_trabajo']) ? $_POST['nombre_trabajo'] : '';
     $categoria = isset($_POST['tipo_trabajo']) ? $_POST['tipo_trabajo'] : '';
@@ -44,11 +45,9 @@ function ejecutarAccion($accion, $conexionBD) {
     $consulta->execute();
     $transaccion = $consulta->fetchAll(PDO::FETCH_ASSOC);
     $idcategoria = $transaccion[0]['IdCategoria']; 
-    
     $codigo_trabajo = isset($_POST['codigo_trabajo']) ? $_POST['codigo_trabajo'] : '';
     $cantidad = isset($_POST['cantidad_trabajo']) ? $_POST['cantidad_trabajo'] : '';
     $precio = isset($_POST['precio_trabajo']) ? $_POST['precio_trabajo'] : '';
-
     $fecha_actual = date('Y-m-d');
 
     switch($accion) {
@@ -86,16 +85,11 @@ function ejecutarAccion($accion, $conexionBD) {
                 $consulta->bindParam(':id_categoria', $idcategoria);
                 $consulta->bindParam(':cantidad', $cantidad);
                 $consulta->bindParam(':subtotal', $precio);
-                $consulta->bindParam(':id_trabajo', $idTrabajo);
-                
+                $consulta->bindParam(':id_trabajo', $idTrabajo);   
                 $consulta->execute();
-
-            
             } catch (PDOException $e) {
                 echo "Error al modificar el trabajo: " . $e->getMessage();
             }
-            
-
             break;
 
         case 'eliminar':
@@ -103,20 +97,17 @@ function ejecutarAccion($accion, $conexionBD) {
                 $sql = "DELETE FROM Trabajo WHERE IdTrabajo = :id_trabajo";
                 $consulta = $conexionBD->prepare($sql);
                 $consulta->bindParam(':id_trabajo', $idTrabajo); 
-                $consulta->execute();
-        
-                
+                $consulta->execute();               
             } catch (PDOException $e) {
                 echo "Error al eliminar el trabajo: " . $e->getMessage();
             }
             break;
 
-    }
-}
+        default:
+            echo "Error al eliminar el trabajo: " . $e->getMessage();
+            break;
 
-$accion = isset($_POST['accion']) ? $_POST['accion'] : '';
-if ($accion != '') {
-    ejecutarAccion($accion, $conexionBD);
+    }
 }
 
 

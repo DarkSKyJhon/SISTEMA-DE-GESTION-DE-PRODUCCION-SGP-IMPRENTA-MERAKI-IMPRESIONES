@@ -13,7 +13,8 @@
         $consulta_resultado = $consulta->get_result();
         if($consulta_resultado->num_rows > 0){
             $data = $consulta_resultado->fetch_assoc();
-            if($data['Contrasenia'] == $password){
+            $hash_password = md5($password); // Aplicar MD5 al password ingresado por el usuario
+            if($data['Contrasenia'] == $hash_password){
                 echo "<script>alert('Acceso Concedido'); window.location.href = 'secciones/index.php';</script>";
             } else {
                 echo "<script>alert('Contraseña Incorrecta');</script>";
