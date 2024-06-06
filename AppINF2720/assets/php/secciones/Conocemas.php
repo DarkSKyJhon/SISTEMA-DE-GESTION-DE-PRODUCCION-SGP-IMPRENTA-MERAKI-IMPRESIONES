@@ -63,11 +63,12 @@
                                 <svg class="bi" width="24" height="24"><use xlink:href="#aperture"/></svg>
                                 </a></li>
                                     <li class="nav-item"><a class="nav-link" href="index.php" ><i class="fa-solid fa-house"></i> Inicio</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="../secciones/vista_usuarios.php"><i class="fa-solid fa-user-tie"></i></i> Usuarios</a></li>
                                     <li class="nav-item"><a class="nav-link" href="vista_trabajos.php"><i class="fa-solid fa-business-time"></i> Trabajos</a></li>
                                     <li class="nav-item"><a class="nav-link" href="vista_materiales.php" ><i class="fa-solid fa-layer-group"></i> Materiales</a></li>
                                     <li class="nav-item"><a class="nav-link" href="vista_transacciones.php"><i class="fa-solid fa-money-check-dollar"></i> Transacciones</a></li>
                                     <li class="nav-item"><a class="nav-link" href="vista_clientes.php"><i class="fa-solid fa-user"></i> Clientes</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-door-open"></i> Cerrar Sesion</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/SISTEMA-DE-GESTION-DE-PRODUCCION-SGP-IMPRENTA-MERAKI-IMPRESIONES/AppINF2720/assets/logout.php"><i class="fa-solid fa-door-open"></i> Cerrar Sesion</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#">
                                 </a></li>
                             </ul>
@@ -85,22 +86,26 @@
             <div class="text__information-cover">
                 <h1>MERAKI IMPRESIONES</h1>
 
-                <p>HISTORIA: Vaya más allá de informar sobre datos históricos. Utilice la inteligencia procesable de cada
-                    evento digital para impactar positivamente en los resultados comerciales. Continuamente. En
-                    tiempo real. A escala.</p>
-                <p>EXPLORAR NEGOCIO: Vaya más allá de informar sobre datos históricos. Utilice la inteligencia procesable de cada
-                    evento digital para impactar positivamente en los resultados comerciales. Continuamente. En
-                    tiempo real. A escala.</p>
-                <p>EQUIPO: Vaya más allá de informar sobre datos históricos. Utilice la inteligencia procesable de cada
-                    evento digital para impactar positivamente en los resultados comerciales. Continuamente. En
-                    tiempo real. A escala.</p>
-                <p>TRAYECTORIA: Vaya más allá de informar sobre datos históricos. Utilice la inteligencia procesable de cada
-                 evento digital para impactar positivamente en los resultados comerciales. Continuamente. En
-                    tiempo real. A escala.</p>
-                <p>TRAYECTORIA: Vaya más allá de informar sobre datos históricos. Utilice la inteligencia procesable de cada
-                 evento digital para impactar positivamente en los resultados comerciales. Continuamente. En
-                    tiempo real. A escala.</p>
-                <p>TRAYECTORIA: Vaya más allá de informar sobre datos históricos. Utilice la</p>
+                <p>METODOS DE IMPRESION:
+                     En MERAKI IMPRESIONES ofrecemos una gran variedad de métodos de impresión
+                    en función del producto. Para papelería de empresa y gráfica promocional, revistas y libros,
+                    disponemos de maquinaria offset y digital de última generación. En digital disponemos de Hp 
+                    indigo de tinta líquida, dando la mayor calidad del mercado en esta técnica. En offset 
+                    disponemos de tren de secado UV máquinas de última generación. Esto nos permite ser más rápidos 
+                    y eficientes, ademas de mejorar la calidad de acabados y evitar repintes. Además, para libros 
+                    disponemos además de rotativa inkjet, dando los mejores precios del mercado con esta máquina en 
+                    tiradas bajas y medias. Disponemos de rotativa de prensa y folletos promocionales para tiradas 
+                    altas y muy altas. Somos la imprenta especializada en tarjetas de visita.</p>
+                <p>REGALOS PUBLICITARIOS y MERCHANDISING:
+                    Hemos preparado un catálogo de regalos promocionales con más 
+                    de 4000 referencias. Podemos enviarlas sin el logo o imprimirlas con diferentes técnicas de Marcado. 
+                    Ofrecemos serigrafía textil, tampografía, bordado, marcado láser, etc. Podrás personalizar un montón de 
+                    regalos publicitarios para regalar a tus clientes o trabajadores. Mejora tu imagen de marca con esta gran 
+                    selección de merchandising para empresas. Si tienes alguna duda sobre estos regalos de empresa, no dudes 
+                    en contactar con nosotros.</p>
+                    
+                <p>TRAYECTORIA: Transformando ideas en impresiones de calidad, acompañándote en cada paso del camino desde el 
+                    primer día.</p>
 
             </div>
 
@@ -121,7 +126,7 @@
                     <img src="../../media/logo meraky impresiones3d.png" id="icon_fire" alt="">
                 </div>
                 <div class="banner__text">
-                    <h2>La pila moderna de inteligencia de datos en la nube para su negocio de misión crítica.</h2>
+                    <h2>Tu socio en impresión y diseño, desbloqueando el potencial de tu negocio, siempre a la vanguardia para tus necesidades de misión crítica.</h2>
                 </div>
             </div>
 

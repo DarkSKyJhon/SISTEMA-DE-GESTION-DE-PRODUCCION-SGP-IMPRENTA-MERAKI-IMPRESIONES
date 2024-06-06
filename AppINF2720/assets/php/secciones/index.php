@@ -42,13 +42,27 @@
     <h2>Productos Populares</h2>
 
     <div class = "popular-content">
-      <img src="../../images/g1.jpg" alt="1">
-      <img src="../../images/g2.jpg" alt="2">
-      <img src="../../images/g3.jpg" alt="3">
-      <img src="../../images/g4.jpg" alt="4">
-      <img src="../../images/g5.jpg" alt="5">
-      <img src="../../images/g6.jpg" alt="6">
-      <img src="../../images/g7.jpg" alt="7">
+      <figrue class="card">
+        <img src="../../images/p1.jpg" alt="1">
+      </figrue>
+      <figrue class="card">
+        <img src="../../images/p2.jpg" alt="2">
+      </figrue>
+      <figrue class="card">
+        <img src="../../images/p3.jpg" alt="3">
+      </figrue>
+      <figrue class="card">
+        <img src="../../images/p4.jpg" alt="4">
+      </figrue>
+      <figrue class="card">
+        <img src="../../images/p5.jpg" alt="5">
+      </figrue>
+      <figrue class="card">
+        <img src="../../images/p6.jpg" alt="6">
+      </figrue>
+      <figrue class="card">
+        <img src="../../images/p7.jpg" alt="7">
+      </figrue>
     </div>
   </section>
 
@@ -57,89 +71,89 @@
     <div class = "product-content">
 
     <div class = "producto-1">
-        <img src="../../images/l1.jpg" alt="">
+        <img src="../../images/pro1.jpg" alt="">
         <div class = "product-txt">
-          <h3>Producto Calendario</h3>
+          <h3>Carteles Inmobiliarias</h3>
           <div class="price">
-            <p>Descripcion</p>
-            <p>Precio: 900 Bs</p>
+            <p>Resistentes al exterior</p>
+            <p>Precio: 225.11 Bs</p>
           </div>
         </div>
     </div>
 
     <div class = "producto-1">
-        <img src="../../images/l2.jpg" alt="">
+        <img src="../../images/pro2.jpg" alt="">
         <div class = "product-txt">
-          <h3>Producto Calendario</h3>
+          <h3>Tarjetas Kraft</h3>
           <div class="price">
-            <p>Descripcion</p>
-            <p>Precio: 800 Bs</p>
+            <p>Cartulina Kraft de 300 gr</p>
+            <p>Precio: 187.59 Bs</p>
           </div>
         </div>
     </div>
 
     <div class = "producto-1">
-        <img src="../../images/l3.jpg" alt="">
+        <img src="../../images/pro3.jpg" alt="">
         <div class = "product-txt">
-          <h3>Producto Calendario</h3>
+          <h3>Productos Dípticos</h3>
           <div class="price">
-            <p>Descripcion</p>
-            <p>Precio: 700 Bs</p>
+            <p>Distintos tipos de orientación</p>
+            <p>Precio: 600.30 Bs</p>
           </div>
         </div>
     </div>
 
     <div class = "producto-1">
-        <img src="../../images/l4.jpg" alt="">
+        <img src="../../images/pro4.jpg" alt="">
         <div class = "product-txt">
-          <h3>Producto Calendario</h3>
+          <h3>Productos Flyers</h3>
           <div class="price">
-            <p>Descripcion</p>
-            <p>Precio: 600 Bs</p>
+            <p>Hasta 18 tipos de papeles diferentes</p>
+            <p>Precio: 375.18 Bs</p>
           </div>
         </div>
     </div>
 
     <div class = "producto-1">
-        <img src="../../images/l6.jpg" alt="">
+        <img src="../../images/pro5.jpg" alt="">
         <div class = "product-txt">
-          <h3>Producto Calendario</h3>
+          <h3>Carpa Plegable personalizada </h3>
           <div class="price">
-            <p>Descripcion</p>
-            <p>Precio: 500 Bs</p>
+            <p>Cubierta impresa en toda la superficie a color</p>
+            <p>Precio: 450.22 Bs</p>
           </div>
         </div>
     </div>
 
     <div class = "producto-1">
-        <img src="../../images/l7.jpg" alt="">
+        <img src="../../images/pro6.jpg" alt="">
         <div class = "product-txt">
-          <h3>Producto Calendario</h3>
+          <h3>Calendarios de Pared</h3>
           <div class="price">
-            <p>Descripcion</p>
-            <p>Precio: 400 Bs</p>
+            <p>A4 cerrados - A3 abiertos</p>
+            <p>Precio: 55.53 Bs</p>
           </div>
         </div>
     </div>
 
     <div class = "producto-1">
-        <img src="../../images/l8.jpg" alt="">
+        <img src="../../images/pro7.jpg" alt="">
         <div class = "product-txt">
-          <h3>Producto Calendario</h3>
+          <h3>Vinilo Adhesivo Clásico</h3>
           <div class="price">
-            <p>Descripcion</p>
-            <p>Precio: 300 Bs</p>
+            <p>Tamaño personalizado desde 15x15cm</p>
+            <p>Precio: 300.15 Bs</p>
           </div>
         </div>
     </div>
 
     <div class = "producto-1">
-        <img src="../../images/l9.jpg" alt="">
+        <img src="../../images/pro8.jpg" alt="">
         <div class = "product-txt">
-          <h3>Producto Calendario</h3>
+          <h3>Expositor Extensible</h3>
           <div class="price">
-            <p>Descripcion</p>
-            <p>Precio: 100 Bs</p>
+            <p>Expositor plegable</p>
+            <p>Precio: 450.22 Bs</p>
           </div>
         </div>
     </div>
@@ -147,7 +161,7 @@
   </main>
 
   <section>
-    <iframe class = "map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102116.3968297945!2d-67.12689575585482!3d-17.982304995330978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e2b0a1fdff86f5%3A0xfe586e79566dead5!2sOruro!5e0!3m2!1ses!2sbo!4v1713758550686!5m2!1ses!2sbo" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe class = "map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3795.0811253069887!2d-67.11030922604576!3d-17.974962280416523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e2b0b86c7896fb%3A0x6049804d8362f894!2sAve%20Brasil%201930%2C%20Oruro!5e0!3m2!1ses-419!2sbo!4v1717359065919!5m2!1ses-419!2sbo" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </section>
 
   <section class="contact container">
