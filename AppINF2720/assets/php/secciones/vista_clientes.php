@@ -1,21 +1,37 @@
-<?php include('../temporal/cabecera.php'); ?>
+<?php 
+include('../temporal/cabecera.php');
+?>
+
 <script>
   function eliminar() {
     var respuesta = confirm("¿Estás seguro que deseas eliminar?");
     return respuesta;
   }
 </script>
+
 <?php 
 include "../datos/clientes.php";
-include "../controlador/eliminar_cliente.php";?>
+include "../controlador/eliminar_cliente.php";
+
+$mensajeError = "";
+
+if(isset($_POST["btnregistrar"])) {
+    // Verificar si los campos están vacíos
+    if(empty($_POST["nombre"]) || empty($_POST["apellido"]) || empty($_POST["correo"]) || empty($_POST["telefono"]) || empty($_POST["direccion"])) {
+        $mensajeError = "<div class='alert alert-danger'>Por favor completa todos los campos</div>";
+    } else {
+        // Procesar el formulario de registro
+        include "../controlador/registro_cliente.php";
+    }
+}
+?>
+
 <div class="container">
   <div class="row">
     <div class="col-md-4">
       <form class="p-3 border rounded" method="POST">
         <h3 class="text-center text-secondary alert alert-success">Registro de Clientes</h3>
-        <?php
-        include "../controlador/registro_cliente.php";
-        ?>
+        <?= $mensajeError ?>
         <div class="mb-3">
           <label class="form-label">Nombre:</label>
           <input type="text" class="form-control" name="nombre" placeholder="Nombre del cliente">
@@ -34,10 +50,10 @@ include "../controlador/eliminar_cliente.php";?>
         </div>
         <div class="mb-3">
           <label class="form-label">Dirección:</label>
-          <input type="text" class="form-control" name="direccion"placeholder="dir-123">
+          <input type="text" class="form-control" name="direccion" placeholder="dir-123">
         </div>
         <div class="mb-3 text-center">
-        <button type="submit" class="btn btn-primary " style="width: 100%;" name="btnregistrar" value="ok">Registrar</button>
+          <button type="submit" class="btn btn-primary " style="width: 100%;" name="btnregistrar" value="ok">Registrar</button>
         </div>
       </form>
     </div>
