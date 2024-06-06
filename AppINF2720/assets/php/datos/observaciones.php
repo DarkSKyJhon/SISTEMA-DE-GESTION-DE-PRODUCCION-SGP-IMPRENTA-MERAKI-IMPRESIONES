@@ -46,10 +46,8 @@ function obtenerListaObservacion_M($conexionBD, $idObservacion) {
     }
 }
 
-
-function ejecutarAccion($accion, $conexionBD) {
-    global $IdTrabajo;
-    
+$accion = isset($_POST['accion']) ? $_POST['accion'] : '';
+if ($accion != '') {  
     $id_observacion = isset($_POST['id-obs']) ? $_POST['id-obs'] : '';
     $numero_observacion = isset($_POST['num-obs']) ? $_POST['num-obs'] : '';
     $descripcion_observacion = isset($_POST['descripcion']) ? $_POST['descripcion'] : '';    
@@ -97,11 +95,6 @@ function ejecutarAccion($accion, $conexionBD) {
             }
             break;
     }
-}
-
-$accion = isset($_POST['accion']) ? $_POST['accion'] : '';
-if ($accion != '') {
-    ejecutarAccion($accion, $conexionBD);
 }
 
 $accion2 = isset($_POST['accion2']) ? $_POST['accion2'] : '';

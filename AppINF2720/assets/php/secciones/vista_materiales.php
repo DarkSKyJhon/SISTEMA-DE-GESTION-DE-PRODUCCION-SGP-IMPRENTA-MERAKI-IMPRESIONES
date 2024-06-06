@@ -1,6 +1,11 @@
 <?php include('../temporal/cabecera.php'); ?>
 <?php include('../datos/materiales.php'); ?>
 
+<style>
+  .oculto {
+    display: none;
+  }
+</style>
 
 <div class = "row">
                     
@@ -9,7 +14,7 @@
         <div class = "row"> 
 
 
-        <div class = "col-md-5">
+        <div class = "col-md-4">
             <form action="" method="post">
 
 
@@ -129,7 +134,7 @@
         </div>
 
 
-        <div class = "col-md-7">
+        <div class = "col-md-8">
             <div class="table-responsive">
                 <table class="table table-striped table table-">
                     <thead>
@@ -138,8 +143,8 @@
                             <th scope="col">Material</th>
                             <th scope="col">Precio Unitario[Bs]</th>
                             <th scope="col">Cantidad</th>
-                            <th scope="col">Descripcion</th>
-                            <th scope="col">#####</th>
+                            <th scope="col" class="oculto">Descripcion</th>
+                            <th scope="col">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -149,7 +154,7 @@
                             <td> <?php echo $Material['Nombre']; ?></td>
                             <td> <?php echo $Material['PrecioCompra']; ?> </td>
                             <td> <?php echo $Material['Stock']; ?> </td>
-                            <td> <?php echo $Material['Descripcion']; ?> </td>
+                            <td class="oculto"> <?php echo $Material['Descripcion']; ?> </td>
                             <td>
                                 <form action = "" method = "post">
                                     <input type = "hidden" name = "id" id = "id" value = "<?php echo $Material['IdMaterial'];?>"/>

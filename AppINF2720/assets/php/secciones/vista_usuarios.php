@@ -33,10 +33,6 @@ include "../controlador/eliminar_usuario.php";?>
           <input type="text" class="form-control" name="telefono" placeholder="12345678">
         </div>
         <div class="mb-3">
-          <label class="form-label">Estado:</label>
-          <input type="text" class="form-control" name="estado"placeholder="dir-123">
-        </div>
-        <div class="mb-3">
           <label class="form-label">Fecha de Registro:</label>
           <input type="text" class="form-control" name="fecha"placeholder="dir-123">
         </div>
@@ -64,7 +60,6 @@ include "../controlador/eliminar_usuario.php";?>
               <th scope="col">Apellido</th>
               <th scope="col">Correo</th>
               <th scope="col">Telefono</th>
-              <th scope="col">Estado</th>
               <th scope="col">FechaRegistro</th>
               <th scope="col">Usuario</th>
               <th scope="col">Contraseña</th>
@@ -82,7 +77,6 @@ include "../controlador/eliminar_usuario.php";?>
               <td><?= $datos->Apellido ?></td>
               <td><?= $datos->Correo ?></td>
               <td><?= $datos->Telefono ?></td>
-              <td><?= $datos->Estado ?></td>
               <td><?= $datos->FechaRegistro ?></td>
               <td><?= $datos->Usuario ?></td>
               <td><?= $datos->Contrasenia ?></td>

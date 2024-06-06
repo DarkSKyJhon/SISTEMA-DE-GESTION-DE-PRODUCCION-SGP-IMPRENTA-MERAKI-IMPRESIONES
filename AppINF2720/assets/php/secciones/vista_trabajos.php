@@ -16,7 +16,7 @@ $trabajos = obtenerListaTrabajos($conexionBD);
         <div class = "row"> 
 
 
-        <div class = "col-md-5">
+        <div class = "col-md-4">
             <form action="" method="post">
 
             <div class="card">
@@ -123,16 +123,11 @@ $trabajos = obtenerListaTrabajos($conexionBD);
 
                 </div>
             </div>
-
-
             </form>
-                
-            
-
         </div>
 
 
-        <div class = "col-md-7">
+        <div class = "col-md-8">
             <div class="table">
                 <table class="table table-striped table table-">
                     <thead>

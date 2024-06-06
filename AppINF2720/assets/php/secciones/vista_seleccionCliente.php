@@ -1,8 +1,8 @@
 <?php include('../temporal/cabecera.php'); ?>
-<?php include('../datos/detalle_obs.php'); ?>
+<?php include('../datos/seleccion_cliente.php'); ?>
 
 <?php
-$lista = obtenerListaMateriales($conexionBD);
+$lista = obtenerListaClientes($conexionBD);
 ?>
 
 <div class="row">
@@ -10,43 +10,38 @@ $lista = obtenerListaMateriales($conexionBD);
         <br>
         <div class="row"> 
             <div class="col-md-4">
-                <form action="" method="post">
+                <form action="vista_transacciones.php" method="post">
                     <div class="card">
-                        <h3 class="text-center text-secondary alert alert-success">Selección de Materiales</h3>
+                        <h3 class="text-center text-secondary alert alert-success">Selección de Clientes</h3>
 
-                        <input type="hidden" name="id_material" id="id_material" value="">
+                        <input type="hidden" name="id_cliente" id="id_cliente" value="">
+                        <input type="hidden" name="origen" value="cliente">
 
                         <div class="card-body">
+                            
                             <div class="mb-3">
-                                <label for="" class="form-label" style="font-weight: bold;">Numero de Observacion</label>
-                                <label for="" class="form-label" style="font-weight: bold;"><?php echo $NumeroObservacion;?></label>
-                            </div>
-
-
-                            <div class="mb-3">
-                                <label for="" class="form-label">Material</label>
-                                <input type="text" class="form-control" name="material" value="" placeholder="Nombre Material" readonly>
+                                <label for="" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" name="n_cliente" value="" placeholder="Nombre del Cliente" readonly>
                             </div>
 
                             <div class="mb-3">
-                                <label for="" class="form-label">Precio Compra</label>
-                                <input type="text" class="form-control" name="precio_compra" value="" placeholder="Precio Unitario del Material" readonly>
+                                <label for="" class="form-label">Apellido</label>
+                                <input type="text" class="form-control" name="a_cliente" value="" placeholder="Apellido del Cliente" readonly>
                             </div>
 
                             <div class="mb-3">
-                                <label for="" class="form-label">Cantidad de Material a Usar</label>
+                                <label for="" class="form-label">Numero de Telefono</label>
                                 <input
-                                    type="number"
+                                    type="text"
                                     class="form-control"
-                                    name="cantidad_material"
-                                    id="cantidad_material"
-                                    placeholder="Establezca una cantidad menor al Almacenado en Inventario"
-                                    min="0" 
-                                    step="1"
-                                    required
+                                    name="telefono_cliente"
+                                    id="telefono_cliente"
+                                    placeholder="Celular - Telefono de Contacto"
+                                    readonly
                                 >
                             </div>
                             
+
                             <button
                                 id="botonAgregar"
                                 type="submit"
@@ -55,7 +50,7 @@ $lista = obtenerListaMateriales($conexionBD);
                                 class="btn btn-success btn-block"
                             >
                             <i class="fa-solid fa-download"></i>
-                                Agregar al Trabajo
+                                Seleccionar el Cliente
                             </button>
 
                             
@@ -71,18 +66,18 @@ $lista = obtenerListaMateriales($conexionBD);
                             <tr> 
                                 <th scope="col" >#</th> 
                                 <th scope="col" >Nombre</th> 
-                                <th scope="col" >Precio Compra</th> 
-                                <th scope="col" >Cantidad Almacen</th> 
+                                <th scope="col" >Apellido</th> 
+                                <th scope="col" >Telefono</th> 
                             </tr>
                         </thead>
                         <tbody>
                             <?php $contador = 1 ?>
                             <?php foreach ($lista as $elemento) { ?>
-                                <tr data-idMaterial="<?php echo $elemento['IdMaterial']; ?>">
+                                <tr data-idCliente="<?php echo $elemento['IdCliente']; ?>">
                                     <td> <?php echo $contador ?>  </td>
                                     <td> <?php echo $elemento['Nombre']; ?>  </td>
-                                    <td> <?php echo $elemento['PrecioCompra']; ?>  </td>
-                                    <td> <?php echo $elemento['Stock']; ?>  </td>
+                                    <td> <?php echo $elemento['Apellido']; ?>  </td>
+                                    <td> <?php echo $elemento['Telefono']; ?>  </td>
                                 </tr>
                                 <?php $contador += 1 ?> 
                             <?php } ?> 
@@ -95,15 +90,16 @@ $lista = obtenerListaMateriales($conexionBD);
                             filas.forEach(function(fila, indice) {
                                 fila.addEventListener("click", function() {
                                     // Obtener datos de las celdas
-                                    const idMaterial = fila.getAttribute("data-idMaterial")
-                                    const nombreMaterial = fila.querySelectorAll("td")[1].textContent;
-                                    const precioCompra = fila.querySelectorAll("td")[2].textContent;
-
+                                    const idCliente = fila.getAttribute("data-idCliente")
+                                    const nombreCliente = fila.querySelectorAll("td")[1].textContent;
+                                    const apellidoCliente = fila.querySelectorAll("td")[2].textContent;
+                                    const telefonoCliente = fila.querySelectorAll("td")[3].textContent;
                                     // Colocar datos en los inputs
-                                    document.querySelector("input[name='material']").value = nombreMaterial;
-                                    document.querySelector("input[name='precio_compra']").value = precioCompra;
-                                    document.getElementById("id_material").value = idMaterial;
-                                    
+                                    document.querySelector("input[name='n_cliente']").value = nombreCliente;
+                                    document.querySelector("input[name='a_cliente']").value = apellidoCliente;
+                                    document.querySelector("input[name='telefono_cliente']").value = telefonoCliente;
+                                    document.getElementById("id_cliente").value = idCliente;
+                                                                        
                                 });
                             });
                         });
@@ -114,7 +110,6 @@ $lista = obtenerListaMateriales($conexionBD);
         </div>         
     </div>
 </div>
-
 
 
 

@@ -9,7 +9,7 @@ $lista = obtenerListaObservaciones($conexionBD);
     <div class="col-12">
         <br>
         <div class="row"> 
-            <div class="col-md-5">
+            <div class="col-md-4">
                 <form action="" method="post">
                     <div class="card">
                         <h3 class="text-center text-secondary alert alert-success">Observacion</h3>
@@ -31,13 +31,13 @@ $lista = obtenerListaObservaciones($conexionBD);
                             <div class="btn-group" role="group" aria-label="Button group name">
                                 <button type="submit" name="accion" value="agregar" class="btn btn-success btn-block">Agregar</button>
                                 <button type="submit" name="accion" value="editar" class="btn btn-primary btn-block"  onclick="return confirm('¿Estás seguro de que deseas editar esta Observacion?')">Editar</button>
-                                <button type="submit" name="accion" value="eliminar" class="btn btn-danger btn-block" onclick="return confirm('¿Estás seguro de que deseas eliminar esta Observacion?')">Eliminar</button>
+                                <button type="submit" name="accion" value="borrar" class="btn btn-danger btn-block" onclick="return confirm('¿Estás seguro de que deseas eliminar esta Observacion?')">Eliminar</button>
                             </div>
                         </div>
                     </div>
                 </form>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-8">
                 <div class="table">
                     <?php foreach ($lista as $elemento) { ?>
                         <table class="table table-striped table table-">

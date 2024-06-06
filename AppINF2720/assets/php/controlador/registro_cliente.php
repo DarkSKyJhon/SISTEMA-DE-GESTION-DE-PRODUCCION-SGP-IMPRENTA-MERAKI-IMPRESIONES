@@ -8,7 +8,7 @@ if(!empty($_POST["btnregistrar"])){
       $telefono=$_POST['telefono'];
       $direccion=$_POST['direccion'];
 
-      $sql=$conexion->query("insert into clientes(Nombre,Apellido,Correo,Telefono,Direccion) values('$nombre','$apellido','$correo','$telefono','$direccion')");
+      $sql=$conexion->query("insert into cliente(Nombre,Apellido,Correo,Telefono,Direccion) values('$nombre','$apellido','$correo','$telefono','$direccion')");
       if ($sql==1){
         echo '<div class="alert alert-success>Cliente registrado correctamente</div>"';
 

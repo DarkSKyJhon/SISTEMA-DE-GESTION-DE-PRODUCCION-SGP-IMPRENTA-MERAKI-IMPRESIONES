@@ -59,7 +59,7 @@ include "../controlador/eliminar_cliente.php";?>
           <tbody>
             <?php
             include "../datos/clientes.php";
-            $sql =$conexion->query("select * from clientes");
+            $sql =$conexion->query("select * from cliente");
             while($datos=$sql->fetch_object()){?>
               <tr>
               <td><?= $datos->IdCliente ?></td>
