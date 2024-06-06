@@ -49,7 +49,7 @@
                             <li class="nav-item"><a class="nav-link" href="../secciones/vista_materiales.php" ><i class="fa-solid fa-layer-group"></i> Materiales</a></li>
                             <li class="nav-item"><a class="nav-link" href="../secciones/vista_transacciones.php"><i class="fa-solid fa-money-check-dollar"></i> Transacciones</a></li>
                             <li class="nav-item"><a class="nav-link" href="../secciones/vista_clientes.php"><i class="fa-solid fa-users"></i> Clientes</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-door-open"></i> Cerrar Sesion</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/SISTEMA-DE-GESTION-DE-PRODUCCION-SGP-IMPRENTA-MERAKI-IMPRESIONES/AppINF2720/assets/logout.php"><i class="fa-solid fa-door-open"></i> Cerrar Sesion</a></li>
                             <li class="nav-item"><a class="nav-link" href="#">
                             </a></li>
                         </ul>
